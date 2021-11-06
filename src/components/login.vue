@@ -5,14 +5,9 @@
       <div class="avatar_box">
         <img src="../assets/logo.png" alt="" />
       </div>
+
       <!-- 登录表单区域 -->
-      <el-form
-        ref="loginFormRef"
-        :model="loginForm"
-        :rules="loginFormRules"
-        label-width="0px"
-        class="login_form"
-      >
+      <el-form ref="loginFormRef" :model="loginForm" :rules="loginFormRules" label-width="0px" class="login_form" >
         <!-- 用户名 -->
         <el-form-item prop="username">
           <el-input
@@ -28,12 +23,15 @@
             type="password"
           ></el-input>
         </el-form-item>
+
         <!-- 按钮区域 -->
         <el-form-item class="btns">
           <el-button type="primary" @click="login">登录</el-button>
           <el-button type="info" @click="resetLoginForm">重置</el-button>
         </el-form-item>
+
       </el-form>
+
     </div>
   </div>
 </template>
@@ -76,10 +74,10 @@ export default {
       this.$refs.loginFormRef.resetFields()
     },
     login() {
-      this.$refs.loginFormRef.validate(async (val) => {
-        if (!val) return
+      this.$refs.loginFormRef.validate(async (valid) => {
+        if (!valid) return
         // 将返回的对象解构赋值，将data重命名为res
-        const { data: res } = await this.$http('login', this.loginForm)
+        const { data: res } = await this.$http.post('login', this.loginForm)
         if (res.meta.status != 200) return this.$message.error('登录失败')
         this.$message.success('登录成功')
         /*
