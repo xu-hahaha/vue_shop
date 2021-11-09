@@ -35,7 +35,6 @@
                 <!-- 文本 -->
                 <span>{{ subItem.authName }}</span>
               </template>
-
             </el-menu-item>
           </el-submenu>
         </el-menu>
