@@ -14,7 +14,19 @@ body,
 .el-card {
     box-shadow: 0 1px 1px rgba(0,0,0,.15)!important;
 }
+/* 步骤进度条上下外边距 */
+.el-steps {
+    margin: 20px 0;
+}
+/* 步骤进度条文本字体大小  */
+.el-step__title {
+    font-size: 13px;
+}
 /* 解决element-ui联级选择器高度溢出问题 */
 .el-cascader-menu {
     height: 300px;
+}
+/* 富文本编辑器最小高度 */
+.ql-editor {
+    min-height: 300px;
 }
