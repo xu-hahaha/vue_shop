@@ -262,7 +262,6 @@ import _ from 'lodash'
                      
                     // 发送请求，添加商品
                     const {data:res} = await this.$http.post('goods',form)
-                    console.log(res);
                     if(res.meta.status !== 201) {
                         return this.$message.error('添加商品失败')
                     }
