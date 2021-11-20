@@ -116,7 +116,6 @@ import citydata from './citydata.js'
             // 查询订单列表
             async getOrderList() {
                 const {data:res} = await this.$http.get('orders', { params: this.queryInfo })
-                console.log(res);
                 if(res.meta.status !== 200) {
                     return this.$message.error('获取订单列表失败')
                 }
