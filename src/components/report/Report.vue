@@ -52,7 +52,6 @@ import _ from 'lodash'
             // 发送请求，获取图表要展示的数据
             const {data:res} = await this.$http.get('reports/type/1')
             if(res.meta.status !== 200) return 
-            console.log(res.data);
             // 指定图标数据和配置,合并数据
             const result = _.merge(res.data,this.options)
             // 展示图表
