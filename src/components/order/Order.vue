@@ -63,7 +63,7 @@
 
         <!-- 物流进度对话框 -->
         <el-dialog title="物流进度" :visible.sync="progressDialogVisible" width="50%">
-            <span>这是一段信息</span>
+            
         </el-dialog>
     </div>
 </template>
@@ -141,15 +141,15 @@ import citydata from './citydata.js'
                 this.$refs.addressFormRef.resetFields()
             },
             // 显示物流进程的对话框
-            showProgessDialog() {
+            async showProgessDialog() {
                 // 发送请求获取物流进度数据
-                // const {data:res} = await this.$http.get('/kuaidi/1106975712662')
+                // const {data:res} = await this.$http.get('/kuaidi/804909574412544580')
                 // if(res.meta.status !== 200) {
                 //     return this.$message.error('获取物流信息失败')
                 // }
                 // console.log(res.data);
-                // this.progressData = res.data
-                this.progressDialogVisible = true
+                // // this.progressData = res.data
+                // this.progressDialogVisible = true
             }
         }
     }
